@@ -5,10 +5,11 @@ import './homepage.styles.scss'
 
 
 
-const Hompage = () => (
+const HomePage = (props) => (
+    console.log(props),
     <div className='homepage'>
-   <Directory/>
+   <Directory />
     </div>
 )
 
-export default Hompage;
+export default HomePage;
