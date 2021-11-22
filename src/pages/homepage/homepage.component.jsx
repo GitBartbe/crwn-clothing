@@ -9,6 +9,7 @@ const HomePage = (props) => (
     console.log(props),
     <div className='homepage'>
    <Directory />
+  
     </div>
 )
 

@@ -3,9 +3,12 @@ import './directory.styles.scss'
 import MenuItem from '../menu-item/menu-item.component';
 
 
+
 export default class Director extends Component {
+
     constructor() {
         super();
+     
         this.state = {
        sections:       [
                 {
@@ -51,8 +54,7 @@ export default class Director extends Component {
             <div className='directory-menu'>{
                 this.state.sections.map(({id, ...otherSectionProps}) => ( <MenuItem key={id} {...otherSectionProps}  />))
             }
-               
-            </div>
+                </div>
         )
     }
 }

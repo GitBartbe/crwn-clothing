@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, Link,Outlet} from "react-router-dom";
-
+import ShopComponent from './pages/shop/shop.component'
 import './App.css';
 import HomePage from './pages/homepage/homepage.component';
 
@@ -18,7 +18,7 @@ function App(props) {
   return (
     <Routes>
       <Route path='/' element={<HomePage/>}/>
-      <Route path='/shop/hats' element={<HatsPage/>}/> 
+      <Route path='/shop/' element={<ShopComponent/>}/> 
       
     </Routes>
   )
