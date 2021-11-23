@@ -18,7 +18,7 @@ function App(props) {
   return (
     <Routes>
       <Route path='/' element={<HomePage/>}/>
-      <Route path='/shop/' element={<ShopComponent/>}/> 
+      <Route path='/hats' element={<ShopComponent/>}/> 
       
     </Routes>
   )

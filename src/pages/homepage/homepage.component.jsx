@@ -5,8 +5,8 @@ import './homepage.styles.scss'
 
 
 
-const HomePage = (props) => (
-    console.log(props),
+const HomePage = () => (
+    
     <div className='homepage'>
    <Directory />
   

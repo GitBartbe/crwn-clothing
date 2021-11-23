@@ -6,6 +6,7 @@ import { useNavigate} from 'react-router-dom';
 const MenuItem = ({ title, subtitle, id,imageUrl, size, linkUrl}) => {
     const navigate = useNavigate();
     
+    
     return (
      
              <div 
