@@ -15,11 +15,14 @@ export default class ShopComponent extends Component {
         this.state = {
             collections: SHOP_DATA
         }
-        
+        console.log(SHOP_DATA);    
     }
     
+    
+
     render() {
         const {collections} = this.state;
+       
         
         return (
             
