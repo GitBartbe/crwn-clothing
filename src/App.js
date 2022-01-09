@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route,Redirect, Navigate} from "react-router-dom";
+import { Routes, Route, Navigate} from "react-router-dom";
 import { connect } from "react-redux";
 
 import ShopComponent from "./pages/shop/shop.component";
