@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate} from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { connect } from "react-redux";
 
 import ShopComponent from "./pages/shop/shop.component";
@@ -17,20 +17,18 @@ const HatsPage = () => (
 );
 
 class App extends React.Component {
-
   unsubscribeFromAuth = null;
 
   //onAuthStateChanged is a method on firebase lirbary and geting user from object returned from google auth
-  
+
   componentDidMount() {
-
-   const {setCurrentUser} = this.props;
-
+    const { setCurrentUser } = this.props;
+    
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        userRef.onSnapshot(snapShot => {
+        userRef.onSnapshot((snapShot) => {
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
@@ -53,7 +51,10 @@ class App extends React.Component {
           <Route path="/" element={<HomePage />} />
           <Route path="/shop" element={<ShopComponent />} />
           {/* <Route path="/signin" element={<Sign/>} /> */}
-          <Route  path="/signin" element={this.props.currentUser ? (<Navigate to="/"/>): (<Sign/>) } />
+          <Route
+            path="/signin"
+            element={this.props.currentUser ? <Navigate to="/" /> : <Sign />}
+          />
         </Routes>
       </div>
     );
@@ -61,7 +62,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+  currentUser: user.currentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({
