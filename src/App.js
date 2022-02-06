@@ -14,11 +14,7 @@ import { createStructuredSelector } from "reselect";
 import CheckoutPage from "./pages/checkout/checkout.component";
 
 
-const HatsPage = () => (
-  <div>
-    <h1>Hats Page</h1>
-  </div>
-);
+
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -60,6 +56,7 @@ class App extends React.Component {
             element={this.props.currentUser ? <Navigate to="/" /> : <Sign />}
           />
           <Route path='/checkout' element={<CheckoutPage />}/> 
+          <Route path="shop/*" element={< ShopComponent />}/>
         </Routes>
       </div>
     );
