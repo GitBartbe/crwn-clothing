@@ -11,6 +11,8 @@ import './collection.styles.scss';
 
 
 const CollectionPage = ({ collection, changeParams }) => {
+  const {title, items} = collection;
+console.log(" change params: ",changeParams)
     let params = useParams();
    
     useEffect(() => {
@@ -18,8 +20,15 @@ const CollectionPage = ({ collection, changeParams }) => {
     });
    
     return (
-      <div className="collection">
-        <h2>{params.collectionId}</h2>
+      <div className="collection-page">
+        <h2 className='title' >{title}</h2>
+        <div className='items'>
+          {
+            items.map(item => (
+              <CollectionItem key={item.id} item={item}/>
+            ))
+          }
+        </div>
       </div>
     );
   };
